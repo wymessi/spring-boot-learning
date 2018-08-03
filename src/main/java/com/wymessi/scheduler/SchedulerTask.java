@@ -3,19 +3,26 @@ package com.wymessi.scheduler;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 /**
+ * springboot自带的定时任务
  * 当应用启动后，定时任务开启
  * @author 王冶
  *
  */
 @Component
+@Async //开启任务异步执行，多线程执行任务
 public class SchedulerTask {
 
-	@Scheduled(fixedRate=6000) //每六秒执行一次
+	private static final Logger logger = LogManager.getLogger(SchedulerTask.class);
+	
+	@Scheduled(fixedRate=2000) //每六秒执行一次
 	public void task(){
-		System.out.println("定时任务-现在时间：" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+		logger.info("定时任务-现在时间：" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
 	}
 }
