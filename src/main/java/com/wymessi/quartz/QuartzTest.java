@@ -27,14 +27,22 @@ public class QuartzTest {
 		sched.start();
 
 		// define the job and tie it to our HelloJob class
-		JobDetail job = JobBuilder.newJob(HelloJob.class).withIdentity("myJob", "group1").usingJobData("value", "我是value").build();
+		JobDetail job = JobBuilder.newJob(HelloJob.class).withIdentity("myJob1", "group1").usingJobData("value", "我是value1").build();
 
 		// Trigger the job to run now, and then every 2 seconds
-		Trigger trigger = TriggerBuilder.newTrigger().withIdentity("myTrigger", "group1").startNow()
+		Trigger trigger = TriggerBuilder.newTrigger().withIdentity("myTrigger1", "group1").startNow()
 				.withSchedule(SimpleScheduleBuilder.simpleSchedule().withIntervalInSeconds(2).repeatForever()).build();
 
-		// Tell quartz to schedule the job using our trigger
 		sched.scheduleJob(job, trigger);
+
+		JobDetail job2 = JobBuilder.newJob(HelloJob.class).withIdentity("myJob2", "group2").usingJobData("value", "我是value2").build();
+
+		// Trigger the job to run now, and then every 2 seconds
+		Trigger trigger2 = TriggerBuilder.newTrigger().withIdentity("myTrigger2", "group2").startNow()
+				.withSchedule(SimpleScheduleBuilder.simpleSchedule().withIntervalInSeconds(10).repeatForever()).build();
+
+		// Tell quartz to schedule the job using our trigger
+		sched.scheduleJob(job2, trigger2);
 	}
 
 }

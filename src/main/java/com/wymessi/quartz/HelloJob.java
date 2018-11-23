@@ -1,6 +1,7 @@
 package com.wymessi.quartz;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 
 import org.apache.log4j.LogManager;
@@ -37,6 +38,8 @@ public class HelloJob implements Job {
 
 		JobDataMap dataMap = context.getMergedJobDataMap(); // Note the
 															// difference from
+		System.out.println(Arrays.asList(dataMap.getKeys()));
+
 		logger.info(key + "====" + value);
 	}
 
