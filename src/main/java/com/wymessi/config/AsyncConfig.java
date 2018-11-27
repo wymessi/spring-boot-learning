@@ -9,6 +9,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 /**
+ * 针对spring boot自带定时任务的配置
  * 配置任务异步执行，在不同的线程中执行
  * @author 王冶
  *
