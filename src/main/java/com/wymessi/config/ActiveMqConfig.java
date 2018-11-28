@@ -54,7 +54,7 @@ public class ActiveMqConfig {
 
     @Bean
     public JmsListenerContainerFactory<?> jmsListenerContainerQueue(ActiveMQConnectionFactory connectionFactory){
-        //默认生产者消费者模式
+        //默认生产者消费者模式 哈哈哈
         DefaultJmsListenerContainerFactory bean = new DefaultJmsListenerContainerFactory();
         bean.setConnectionFactory(connectionFactory);
         return bean;
