@@ -1,13 +1,10 @@
 package com.wymessi.quartz;
 
-import org.quartz.JobBuilder;
-import org.quartz.JobDetail;
-import org.quartz.Scheduler;
-import org.quartz.SchedulerFactory;
-import org.quartz.SimpleScheduleBuilder;
-import org.quartz.Trigger;
-import org.quartz.TriggerBuilder;
+import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.PostConstruct;
 
 /**
  * quartz 入门学习
@@ -15,11 +12,12 @@ import org.quartz.impl.StdSchedulerFactory;
  * @author wangye
  *
  */
+@Service
 public class QuartzTest {
 
 	
-	
-	public static void main(String[] args) throws Exception{
+	@PostConstruct
+	public void init() throws Exception{
 		SchedulerFactory schedFact = new StdSchedulerFactory();
 
 		Scheduler sched = schedFact.getScheduler();
