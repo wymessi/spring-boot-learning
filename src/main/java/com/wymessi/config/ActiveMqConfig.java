@@ -54,7 +54,11 @@ public class ActiveMqConfig {
 
     @Bean
     public JmsListenerContainerFactory<?> jmsListenerContainerQueue(ActiveMQConnectionFactory connectionFactory){
+<<<<<<< HEAD
         //默认生产者消费者模式
+=======
+        //默认为点对点模式，即一个消息只能被消费一次
+>>>>>>> dev4
         DefaultJmsListenerContainerFactory bean = new DefaultJmsListenerContainerFactory();
         bean.setConnectionFactory(connectionFactory);
         return bean;
