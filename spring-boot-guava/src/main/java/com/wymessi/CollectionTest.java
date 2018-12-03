@@ -9,6 +9,6 @@ public class CollectionTest {
     public static void main(String[] args) {
         List<String> l = Lists.newArrayList("a","b");
         System.out.println(l);
-
+        Class<Byte> c = Byte.TYPE;
     }
 }
