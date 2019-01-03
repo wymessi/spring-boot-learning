@@ -22,8 +22,8 @@ public class SchedulerTask {
 
 	private static final Logger logger = LogManager.getLogger(SchedulerTask.class);
 	
-//	@Scheduled(fixedRate=2000) //每六秒执行一次
-	@Scheduled(cron = "0 0/1 * * * ? ")
+	@Scheduled(fixedRate=2000) //每两秒执行一次
+//	@Scheduled(cron = "0 0/1 * * * ? ")
 	public void task(){
 		logger.info("定时任务-现在时间：" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
 	}
