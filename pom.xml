@@ -12,6 +12,7 @@
         <module>spring-boot-guava</module>
 		<module>spring-boot-schedule</module>
         <module>spring-boot-profile</module>
+        <module>spring-boot-aop</module>
     </modules>
 
     <parent>
